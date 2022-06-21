@@ -1,0 +1,44 @@
+* [首页哦](README.md)
+* 🍑Liunx（linux相关）
+  * 下载与安装
+    * [下载linux](linux/linux下载.md)
+    * [下载linux](linux/下载与安装(expect).md)
+    * [修改ip](linux/修改ip.md)
+    * [centos7开放端口](linux/开放端口.md)
+    * [linux下安装Java环境](linux/java安装.md)
+  * Linux使用
+    * [linux使用](linux/linux使用.md)
+    * [查看磁盘空间cpu和内存使用情况](linux/查看磁盘空间cpu和内存情况.md)
+* 🍑docker（docker相关）
+  * 安装docker
+    * [docker安装](docker/安装docker.md)
+  * docker使用
+    * [docker容器开机自动启动](docker/docker容器开机自动启动.md)
+    * [docker](docker/docker(狂神).md)
+    * [docker命令](docker/docker命令(知乎).md)
+    * [run命令](docker/run命令.md)
+    * [dockerfle](docker/dockerfile.md)
+    * [Dockerfile构建Java程序](docker/Dockerfile构建Java程序.md)
+    * [自动清理日志](docker/自动清理日志.md)
+  * docker安装常用软件
+    * [docker安装nginx目录挂载](docker/安装常用软件/docker安装nginx目录挂载.md)
+    * [docker安装mysq](docker/安装常用软件/docker安装mysql.md)
+    * [docker安装redis](docker/安装常用软件/docker安装redis.md)
+    * [docker安装rabbitmq](docker/安装常用软件/docker安装rabbitmq.md)
+* 🍑mysql（mysql相关）
+  * 安装mysql
+    * [mysql安装](mysql/下载安装/MySQL下载和安装.md)
+* 🍑nginx（nginx相关）
+  * nginx配置
+    * [nginx配置详情](nginx/nginx配置详情.md)
+    * [反向代理配置](nginx/反向代理配置.md)
+    * [nginx配置清单](nginx/nginx配置清单.md)
+    * [nginx拿到真实域名和ip](nginx/nginx拿到真实域名和ip.md)
+    * [nginx请求超时问题](nginx/nginx请求超时问题.md)
+    * [root和alias的区别](nginx/root和alias的区别.md)
+
+* 🍑idea使用问题（idea相关）
+  * [idea快捷键](idea/idea快捷键.md)
+  * [idea没有servise窗口解决办法](idea/idea没有servise窗口解决办法.md)
+  * [idea连接mysql](idea/idea连接mysql/idea连接mysql.md)
+
