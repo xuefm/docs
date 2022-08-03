@@ -41,4 +41,5 @@
   * [idea快捷键](idea/idea快捷键.md)
   * [idea没有servise窗口解决办法](idea/idea没有servise窗口解决办法.md)
   * [idea连接mysql](idea/idea连接mysql/idea连接mysql.md)
+  * [idea连接docker](idea/idea连接docker/idea连接docker.md)
 
