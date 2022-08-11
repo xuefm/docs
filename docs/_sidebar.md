@@ -42,4 +42,7 @@
   * [idea没有servise窗口解决办法](idea/idea没有servise窗口解决办法.md)
   * [idea连接mysql](idea/idea连接mysql/idea连接mysql.md)
   * [idea连接docker](idea/idea连接docker/idea连接docker.md)
+* 🍑spring boot
+  * [redis地理操作](redis/redis地理操作.md)
+
 
