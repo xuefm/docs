@@ -29,6 +29,7 @@
   * 安装mysql
     * [mysql安装](mysql/下载安装/MySQL下载和安装.md)
     * [脏读幻读可重复读](mysql/脏读幻读可重复读/脏读幻读可重复读.md)
+    * [mysql特殊数据处理](mysql/mysql特殊数据处理.md)
 * 🍑nginx（nginx相关）
   * nginx配置
     * [nginx配置详情](nginx/nginx配置详情.md)
