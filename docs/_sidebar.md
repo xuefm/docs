@@ -28,6 +28,7 @@
 * 🍑mysql（mysql相关）
   * 安装mysql
     * [mysql安装](mysql/下载安装/MySQL下载和安装.md)
+    * [视图函数存储过程](mysql/视图函数存储过程/视图函数存储过程.md)
     * [脏读幻读可重复读](mysql/脏读幻读可重复读/脏读幻读可重复读.md)
     * [mysql特殊数据处理](mysql/mysql特殊数据处理.md)
 * 🍑nginx（nginx相关）
