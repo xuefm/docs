@@ -3,8 +3,7 @@ MAINTAINER expect< 321766987@qq. com>
 
 ADD openjdk-17+35_linux-x64_bin.tar.gz /usr/local/
 
-RUN cd /opt
-RUN mkdir java
+RUN mkdir -p /opt/java
 ENV MYPATH /opt/java
 WORKDIR $MYPATH
 
