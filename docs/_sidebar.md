@@ -9,6 +9,8 @@
   * Linux使用
     * [linux使用](linux/linux使用.md)
     * [查看磁盘空间cpu和内存使用情况](linux/查看磁盘空间cpu和内存情况.md)
+* 🍑git（git相关）
+  * [gitee官网git文档.md](git/gitee官网git文档.md)
 * 🍑docker（docker相关）
   * 安装docker
     * [docker安装](docker/安装docker.md)
@@ -41,7 +43,6 @@
     * [nginx拿到真实域名和ip](nginx/nginx拿到真实域名和ip.md)
     * [nginx请求超时问题](nginx/nginx请求超时问题.md)
     * [root和alias的区别](nginx/root和alias的区别.md)
-
 * 🍑idea使用问题（idea相关）
   * [idea快捷键](idea/idea快捷键.md)
   * [idea没有servise窗口解决办法](idea/idea没有servise窗口解决办法.md)
