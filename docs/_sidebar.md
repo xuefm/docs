@@ -52,5 +52,6 @@
   * [redis地理操作](redis/redis地理操作.md)
   * [SpringSecurity中跨域配置 ](spring/SpringSecurity中跨域配置.md)
   * [aop应用](spring/aop/aop应用.md)
+  * [自定SpringBootStarter](spring/自定SpringBootStarter.md)
 
 
