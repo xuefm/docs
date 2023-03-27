@@ -1,10 +1,10 @@
-# 准备文件
+## 准备文件
 
 openjdk-17+35_linux-x64_bin.tar.gz(如果版本不一样请修改Dockerfile中的jdk版本)
 
 Dockerfile
 
-# 1.新建Dockerfile
+### 1.新建Dockerfile
 
 ```dockerfile
 FROM centos
