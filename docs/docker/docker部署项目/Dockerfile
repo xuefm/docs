@@ -1,5 +1,5 @@
 FROM centos
-MAINTAINER expect< 321766987@qq. com>
+MAINTAINER expect<321766987@qq.com>
 
 ADD openjdk-17+35_linux-x64_bin.tar.gz /usr/local/
 
