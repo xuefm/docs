@@ -28,7 +28,7 @@ ENTRYPOINT ["java","-Duser.timezone=GMT+8","-Dfile.encoding=UTF-8","-Dsun.jnu.en
 ## 通过DockerFile构建镜像
 
 ```bash
- docker build -t java:11 .
+ docker build -t openjdk:17 .
 ```
 
 注意 后面的 . 不能省略
@@ -42,13 +42,13 @@ docker imags
 ## 创建容器
 
 ```bash
-docker run --name java -d -p 8080:8080 -v /opt/java/app.jar:/opt/java/app.jar java:11
+docker run --name java -d -p 8080:8080 -v /opt/java/app.jar:/opt/java/app.jar openjdk:17
 ```
 
 ## 创建容器指定网络
 
 ```bash
-docker run --name java -d -p 8080:8080 -v /opt/java/app.jar:/opt/java/app.jar --network expect java:11
+docker run --name java -d -p 8080:8080 -v /opt/java/app.jar:/opt/java/app.jar --network expect openjdk:17
 ```
 
 ## 查看日志
