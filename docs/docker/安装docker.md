@@ -114,3 +114,22 @@ https://www.cnblogs.com/yufeng218/p/8370670.html
 
 
 
+# 三、设置阿里云镜像加速和日志配置
+
+```bash
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://8dqfgjuq.mirror.aliyuncs.com"],
+  "log-driver":"json-file",
+  "log-opts": {"max-size":"100m", "max-file":"50"}
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+
+
+
+
