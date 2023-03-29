@@ -21,10 +21,8 @@ docker run --name nginx nginx
 #### 宿主机创建文件夹
 
 ```bash
-mkdir -p nginx/conf
+mkdir -p /root/nginx/conf
 ```
-
-
 
 #### 复制容器内的nginx.conf文件到宿主机
 
@@ -32,7 +30,7 @@ mkdir -p nginx/conf
 docker cp nginx:/etc/nginx/nginx.conf /root/nginx/conf
 ```
 
-复制conf.d和html目录
+#### 复制conf.d和html目录
 
 ```bash
 docker cp nginx:/etc/nginx/conf.d /root/nginx/conf/conf.d
