@@ -142,3 +142,38 @@ SELECT JSON_CONTAINS(data, '{"name": "Tom", "age": 18}', '$.students') FROM clas
 
 以上语句表示查找表 `class` 中的 `data` 字段中名为 `students` 的 JSON 数组中是否包含一个名字为 `Tom`，年龄为 `18` 的对象。如果包含，则返回 `1`，否则返回 `0`。
 
+
+
+
+
+
+
+### 分组后用逗号分隔
+
+假设A表中有以下两个字段：user_id和age。要将A表中的user_id用逗号分隔，按age字段进行分组，可以使用MySQL的GROUP_CONCAT函数实现。具体的SQL语句如下所示：
+
+```sql
+Copy CodeSELECT age, GROUP_CONCAT(user_id SEPARATOR ',') AS user_ids
+FROM A
+GROUP BY age;
+```
+
+在这条SQL语句中，先选择了age字段和使用GROUP_CONCAT函数连接user_id，使用“,”作为分隔符，并将其命名为user_ids，然后根据age字段进行分组。
+
+执行完这条SQL语句之后，会返回一个结果集，其中每一行代表一个分组，包含该分组的age值和该分组内的所有user_id，用逗号分隔。
+
+
+
+### 分组后抓换为json数组
+
+要将A表中的user_id设置为JSON数组，按age字段进行分组，可以使用MySQL的GROUP_CONCAT函数和JSON_ARRAY函数实现。具体的SQL语句如下所示：
+
+```sql
+Copy CodeSELECT age, CONCAT('[', GROUP_CONCAT(JSON_QUOTE(user_id)), ']') AS user_ids
+FROM A
+GROUP BY age;
+```
+
+在这条SQL语句中，先选择了age字段和使用GROUP_CONCAT函数连接使用JSON_QUOTE函数处理过的user_id，并在最终结果外包裹了一个中括号“[]”，使用CONCAT函数实现字符串拼接，将其命名为user_ids，然后根据age字段进行分组。
+
+执行完这条SQL语句之后，会返回一个结果集，其中每一行代表一个分组，包含该分组的age值和该分组内的所有user_id，用JSON数组形式表示。
