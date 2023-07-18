@@ -24,7 +24,7 @@ mysql  -h  主机名(ip)  -u  用户名 -P 端口 -p
 show databases;
 ```
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\1.png" alt="image-20210608113128592" style="zoom: 67%;" />
+ <img src=".\img\1.png" alt="image-20210608113128592" style="zoom: 67%;" />
 
 ### 创建数据库
 
@@ -34,7 +34,7 @@ create database 数据库名;
 
 
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\4.png" alt="image-20210608113914623" style="zoom:80%;" />
+ <img src=".\img\4.png" alt="image-20210608113914623" style="zoom:80%;" />
 
 ### 删除数据库
 
@@ -42,7 +42,7 @@ create database 数据库名;
 drop database 数据库名;
 ```
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\5.png" alt="image-20210608114107586" style="zoom:80%;" />
+ <img src=".\img\5.png" alt="image-20210608114107586" style="zoom:80%;" />
 
 ### 切换数据库（进入数据库）
 
@@ -50,7 +50,7 @@ drop database 数据库名;
 use 数据库名
 ```
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\2.png" alt="image-20210608113514411" style="zoom:80%;" />
+ <img src=".\img\2.png" alt="image-20210608113514411" style="zoom:80%;" />
 
 # 表相关
 
@@ -60,7 +60,7 @@ use 数据库名
 show tables;
 ```
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\3.png" alt="image-20210608113636309" style="zoom: 50%;" />
+ <img src=".\img\3.png" alt="image-20210608113636309" style="zoom: 50%;" />
 
 ### 创建表
 
@@ -88,48 +88,68 @@ CREATE TABLE IF NOT EXISTS `tb_one`(
 desc 表名;
 ```
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\6.png" alt="image-20210608114532605" style="zoom:80%;" />
+ <img src=".\img\6.png" alt="image-20210608114532605" style="zoom:80%;" />
 
 
 
 ### 修改表结构
 
+在 MySQL 中，可以使用 ALTER TABLE 语句来修改表的结构。以下是几个常见的表结构修改操作及其对应的语法：
 
+#### 添加新字段：
 
-```sql
-mysql> alter table tb_one modify runoob_title varchar(255) default null comment "标题";
-Query OK, 0 rows affected (0.06 sec)
-Records: 0  Duplicates: 0  Warnings: 0
-
-mysql>
+```mysql
+ALTER TABLE 表名
+ADD 列名 列类型;
 ```
 
-修改后
+例如，要在 `account_info` 表中添加一个名为 `phone` 的字段，可以执行以下语句：
 
- <img src="C:\Users\32176\Desktop\expect项目总结\mysql\mysql命令\img\7.png" alt="image-20210608115955594" style="zoom:80%;" />
-
-```sql
-1.修改字段：一般修改属性和数据类型
-
-alter table login_user modify password varchar(25) DEFAULT NULL COMMENT '密码2'
-
-2.重命名字段：
-alter table 表名 change 老字段   新字段  数据类型 [属性][位置]；
-
-alter table login_user change password2  password varchar(26) DEFAULT NULL COMMENT '密码3'
-
-3.新增字段：alter  table  表名  add [column]  字段名  数据类型  [列属性][位置]
-位置：字段可以存放在表中的任意位置；
-first：第一个位置；
-after：在哪个字段之后；默认在最后一个字段的后面。
-
---添加到最后
-alter  table  login_user  add   password3  varchar(26) DEFAULT NULL COMMENT '密码4'
---添加到指定字段后面  alter table + 表名 + add + 要添加的字段 字段类型 +  after  + 要跟随的字段名
-alter  table  login_user  add   password6   varchar(26)  DEFAULT NULL COMMENT '密码6'  after password
-
-4.删除字段：alter table 表名 drop 字段名；
-
-alter  table  login_user  drop   password5
+```mysql
+ALTER TABLE account_info
+ADD phone varchar(20) NOT NULL DEFAULT '15515515155' COMMENT '手机号';
 ```
 
+#### 修改字段的名称：
+
+```mysql
+ALTER TABLE 表名
+CHANGE 旧列名 新列名 列类型;
+```
+
+假设要将 `phone` 字段更名为 `mobile`，可以执行以下语句：
+
+```mysql
+ALTER TABLE account_info
+CHANGE phone mobile varchar(20);
+```
+
+#### 修改字段的数据类型：
+
+```mysql
+ALTER TABLE 表名
+MODIFY COLUMN 列名 新列类型;
+```
+
+如果要将 `phone` 字段的数据类型更改为 `TEXT`，可以执行以下语句：
+
+```mysql
+ALTER TABLE account_info
+MODIFY COLUMN phone TEXT;
+```
+
+#### 删除字段：
+
+```mysql
+ALTER TABLE 表名
+DROP COLUMN 列名;
+```
+
+例如，要删除 `phone` 字段，可以执行以下语句：
+
+```mysql
+ALTER TABLE account_info
+DROP COLUMN phone;
+```
+
+**请注意，在执行 ALTER TABLE 语句之前，请确保没有正在进行的事务和会话，并且对表的修改操作不会导致数据丢失或破坏表结构。同时，在生产环境中进行表结构的修改前，请先在测试环境中验证和测试相应的 SQL 语句，以确保修改不会引发意外问题。**
