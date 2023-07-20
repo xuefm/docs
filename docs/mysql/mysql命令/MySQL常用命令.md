@@ -110,7 +110,7 @@ ALTER TABLE account_info
 ADD phone varchar(20) NOT NULL DEFAULT '15515515155' COMMENT '手机号';
 ```
 
-#### 修改字段的名称：
+#### 修改字段的名称（）：
 
 ```mysql
 ALTER TABLE 表名
@@ -124,7 +124,7 @@ ALTER TABLE account_info
 CHANGE phone mobile varchar(20);
 ```
 
-#### 修改字段的数据类型：
+#### 修改字段的数据类型（用来修改字段类型 、限制、默认值 等影响结构的）：
 
 ```mysql
 ALTER TABLE 表名
