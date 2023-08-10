@@ -75,7 +75,7 @@ public class GatewayConfig {
 
 
 
-### 4.跨域配置
+### 跨域配置(Servlet版本)
 
 ```java
 import org.springframework.context.annotation.Bean;
@@ -102,6 +102,29 @@ public class CorsConfig  {
         source.registerCorsConfiguration("/**", config);
 
         return new CorsWebFilter(source);
+    }
+}
+```
+
+### 跨域配置(WebFlux版本)
+
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.config.CorsRegistry;
+import org.springframework.web.reactive.config.WebFluxConfigurer;
+/**
+ * 跨域配置
+ */
+@Configuration
+public class GlobalCorsConfig implements WebFluxConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .maxAge(3600L);
     }
 }
 ```
