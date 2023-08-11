@@ -55,6 +55,10 @@
   * [idea连接mysql](idea/idea连接mysql/idea连接mysql.md)
   * [idea连接docker](idea/idea连接docker/idea连接docker.md)
   
+* 🍑java
+
+  * [JVM参数配置说明](java/JVM参数配置说明.md)
+
 * 🍑spring boot
   * [redis地理操作](redis/redis地理操作.md)
   * [SpringSecurity中跨域配置 ](spring/SpringSecurity中跨域配置.md)
