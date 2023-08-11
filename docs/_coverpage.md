@@ -1,12 +1,8 @@
 <img src="img/123.gif" alt="logo" style="zoom:33%;" />
 
-# 闲着没事写点笔记
+# Java程序员萌新
 
-> 一个神奇的文档网站生成器。
+> 开发学习笔记
 
-> 一只刚入门的Java程序员的总结
-
-- 那个用的是docsify
-
-[GitHub](https://github.com/docsifyjs/docsify/)
+[GitHub](https://github.com/xuefm/docs)
 [Get Started](/README.md)
