@@ -75,7 +75,9 @@ public class GatewayConfig {
 
 
 
-### 跨域配置(Servlet版本)
+### 4.跨域配置
+
+#### 4.1 Spring Gateway使用WebFlux之前只需配置此项即可
 
 ```java
 import org.springframework.context.annotation.Bean;
@@ -106,26 +108,103 @@ public class CorsConfig  {
 }
 ```
 
-### 跨域配置(WebFlux版本)
+#### 4.2 Spring Gateway使用WebFlux后还需添加一下配置
+
+> > 原因：由于Netty的bug 请求头会重复，所以需要自己写方法去掉重复的返回头
 
 ```java
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.reactive.config.CorsRegistry;
-import org.springframework.web.reactive.config.WebFluxConfigurer;
-/**
- * 跨域配置
- */
-@Configuration
-public class GlobalCorsConfig implements WebFluxConfigurer {
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.cloud.gateway.filter.NettyWriteResponseFilter;
+import org.springframework.core.Ordered;
+import org.springframework.http.HttpHeaders;
+import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
+import reactor.core.publisher.Mono;
+
+import java.util.Optional;
+import java.util.Set;
+
+@Slf4j
+@Component("corsResponseHeaderFilter")
+public class CorsRemoveHeaderFilter implements GlobalFilter, Ordered {
+
 
     @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("*")
-                .allowedHeaders("*")
-                .maxAge(3600L);
+    public int getOrder() {
+        return NettyWriteResponseFilter.WRITE_RESPONSE_FILTER_ORDER + 21;
     }
+
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        Optional.ofNullable(MDC.get(Constants.TraceId)).ifPresent((t) -> {
+            exchange.getResponse().getHeaders().add(Constants.TraceId, t);
+        });
+
+        return chain.filter(exchange).then(Mono.defer(() -> {
+            //移除重复的返回头
+            HttpHeaders rpsHeaders = exchange.getResponse().getHeaders();
+            Set<String> headers =  Constants.headers();
+            for (String header : headers) {
+                if(rpsHeaders.containsKey(header)) {
+                    String value = rpsHeaders.getFirst(header);
+                    exchange.getResponse().getHeaders().remove(header);
+                    if (Constants.Access_Control_Allow_Methods.equals(header)) {
+                        value = Constants.ACCESS_CONTROL_ALLOW_METHODS_VALUE;
+                    }
+                    exchange.getResponse().getHeaders().set(header, value);
+                }
+            }
+            return chain.filter(exchange);
+        }));
+    }
+}
+
+```
+
+常量
+
+```java
+package com.expect.cloudgateway.data;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Constants {
+
+    public static final String ORIGIN = "Origin";
+    public static final String Access_Control_Allow_Origin = "Access-Control-Allow-Origin";
+    public static final String Access_Control_Allow_Credentials = "Access-Control-Allow-Credentials";
+    public static final String Access_Control_Allow_Methods = "Access-Control-Allow-Methods";
+    public static final String Access_Control_Request_Headers = "Access-Control-Request-Headers";
+    public static final String Access_Control_Allow_Headers = "Access-Control-Allow-Headers";
+    public static final String TraceId = "X-B3-TraceId";
+    public static final String X_FRAME_OPTIONS = "X-Frame-Options";
+    public static final String X_XSS_Protection = "X-XSS-Protection";
+    public static final String VARY = "Vary";
+    public static final String ACCESS_CONTROL_ALLOW_METHODS_VALUE ="GET,POST,PUT,DELETE,OPTIONS";
+
+
+    public static Set<String> headers = new HashSet<>();
+
+    static {
+        headers.add(Access_Control_Allow_Origin);
+        headers.add(Access_Control_Allow_Credentials);
+        headers.add(Access_Control_Allow_Methods);
+        headers.add(Access_Control_Request_Headers);
+        headers.add(Access_Control_Allow_Headers);
+        headers.add(VARY);
+        headers.add(TraceId);
+        headers.add(X_FRAME_OPTIONS);
+        headers.add(X_XSS_Protection);
+    }
+
+    public static Set<String> headers(){
+        return headers;
+    }
+
 }
 ```
 
