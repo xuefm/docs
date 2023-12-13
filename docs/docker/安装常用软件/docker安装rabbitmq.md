@@ -38,7 +38,7 @@ docker ps
 启动rabbitmq_management
 
 ```bash
-docker exec -it rabbit rabbitmq-plugins enable rabbitmq_management
+docker exec -it rabbitmq rabbitmq-plugins enable rabbitmq_management
 ```
 
 rabbit 为镜像的应用名称
