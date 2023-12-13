@@ -1,5 +1,3 @@
-参考网址https://www.cnblogs.com/yanglei-xyz/p/10813175.html
-
 ### 拉取redis镜像
 
 ```bash
@@ -54,10 +52,4 @@ redis redis-server /etc/redis/redis.conf\
 ```
 
 
-
-如果创建时未指定 --restart=always ,可通过update 命令
-
-```bash
-docker update --restart=always xxx
-```
 
