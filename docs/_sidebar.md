@@ -33,6 +33,7 @@
     * [docker安装redis](docker/安装常用软件/docker安装redis.md)
     * [docker安装rabbitmq](docker/安装常用软件/docker安装rabbitmq.md)
     * [docker安装elasticsearch](docker/安装常用软件/docker安装elasticsearch.md)
+    * [docker安装elasticsearch8.10.2](docker/安装常用软件/docker安装elasticsearch8.10.2.md)
     * [docker安装RocketMQ](docker/安装常用软件/docker安装RocketMQ.md)
   
 * 🍑mysql（mysql相关）
