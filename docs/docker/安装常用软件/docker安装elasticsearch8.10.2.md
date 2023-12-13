@@ -94,6 +94,7 @@ xpack.security.transport.ssl:
   keystore.path: certs/transport.p12
   truststore.path: certs/transport.p12
 #----------------------- END SECURITY AUTO CONFIGURATION -------------------------
+#(添加)http.host: 0.0.0.0允许所有ip访问
 http.host: 0.0.0.0
 ```
 
