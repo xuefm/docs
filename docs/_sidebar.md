@@ -28,7 +28,7 @@
     * [Dockerfile构建Java程序](docker/Dockerfile构建Java程序.md)
     * [自动清理日志](docker/自动清理日志.md)
   * docker安装常用软件
-    * [docker安装nginx目录挂载](docker/安装常用软件/docker安装nginx目录挂载.md)
+    * [docker安装nginx](docker/安装常用软件/docker安装nginx.md)
     * [docker安装mysq](docker/安装常用软件/docker安装mysql.md)
     * [docker安装redis](docker/安装常用软件/docker安装redis.md)
     * [docker安装rabbitmq](docker/安装常用软件/docker安装rabbitmq.md)

@@ -1,9 +1,5 @@
 
 
-
-
-
-
 ~~~~bash
 #拉取镜像
 docker pull nacos/nacos-server
