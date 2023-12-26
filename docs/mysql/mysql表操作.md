@@ -1,6 +1,6 @@
 ## 1、create table -- 新建表
 
-```mysql
+```sql
 create table 表名(
 字段名1 类型[(宽度) 约束条件],
 字段名2 类型[(宽度) 约束条件],
@@ -14,13 +14,13 @@ create table 表名(
 
 ## 2、drop table -- 删除表
 
-```mysql
+```sql
 drop table 表名;
 ```
 
 ## 3、desc 表名 -- 查看表结构
 
-```mysql
+```sql
 # 查看表结构有两种方式：
 describe 表名;这种方法和desc 表名;效果相同；可以查看当前的表结构
 
@@ -31,67 +31,67 @@ describe 表名;这种方法和desc 表名;效果相同；可以查看当前的�
 
 #### (1)、 alter table 表名 rename 新表名; --- 修改表名
 
-```mysql
+```sql
 alter table test rename staff;
 ```
 
 #### (2)、alter table 表名 charset 编码; --- 修改表的编码方式
 
-```mysql
+```sql
 alter table test charset utf8;
 ```
 
 #### (3)、alter table 表名 auto_increment 自增的位置; --- 修改表的自增值
 
-```mysql
+```sql
 alter table test auto_increment = 10;
 ```
 
 #### (4)、alter table 表名 add 字段名 类型(长度) 约束; --- 增加字段
 
-```mysql
+```sql
 alter table test add sex enum('male','female');
 ```
 
 #### (5)、 alter table 表名 drop 字段名; --- 删除字段
 
-```mysql
+```sql
 alter table test drop sex;
 ```
 
 #### (6)、 alter table 表名 change 字段名 新名字 类型(长度) 约束； --- 修改字段名
 
-```mysql
+```sql
 alter table test change name sname varchar(20);
 ```
 
 #### (7)、 alter table 表名 modify 字段名 新类型(新长度) 约束; --- 修改字段类型
 
-```mysql
+```sql
 alter table test modify id int(4);
 ```
 
 #### (8)、 alter table 表名 change 旧字段名 新字段名 类型(长度) 约束 frist; -- 修改字段的排列顺序为第一个
 
-```mysql
+```sql
 alter table test change sex sex enum('male','female') first;
 ```
 
 #### (9)、 alter table 表名 change 旧字段名 新字段名 类型(长度) 约束 after 字段; --- 修改字段的排列顺序为在字段后面
 
-```mysql
+```sql
 alter table test change sex sex enum('male','female') after sname;
 ```
 
 #### (10)、alter table 表名 add 字段名 类型(长度) 约束 frist; --- 添加一个字段位置在第一个
 
-```mysql
+```sql
 alter table test add age int first;
 ```
 
 #### (11)、 alter table 表名 add 字段名 类型(长度) 约束 after 字段; --- 添加一个字段在name字段后
 
-```mysql
+```sql
 alter table test add hobby char(22) after cname;
 ```
 
