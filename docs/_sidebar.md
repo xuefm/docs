@@ -38,6 +38,10 @@
   
 * 🍑mysql（mysql相关）
   * [mysql安装](mysql/下载安装/MySQL下载和安装.md)
+  * [mysql数据类型](mysql/mysql数据类型.md)
+  * [mysql表操作](mysql/mysql表操作.md)
+  * [mysql添加索引](mysql/mysql添加索引.md)
+  * [mysql查询执行顺序](mysql/mysql查询语句执行顺序.md)
   * [视图函数存储过程](mysql/视图函数存储过程/视图函数存储过程.md)
   * [脏读幻读可重复读](mysql/脏读幻读可重复读/脏读幻读可重复读.md)
   * [mysql特殊数据处理](mysql/mysql特殊数据处理.md)
