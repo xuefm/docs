@@ -9,7 +9,7 @@ docker run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456  mysql
 ### 二、设置root账户远程连接权限
 
 ```bash
-docker exec -it 7681b85e73a1 /bin/sh
+docker exec -it mysql /bin/sh
 ```
 
 解释：进入容器、以交互模式、容器id 、/bin/sh
