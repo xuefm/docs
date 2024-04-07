@@ -47,13 +47,14 @@
   * [mysql特殊数据处理](mysql/mysql特殊数据处理.md)
 
 * 🍑nginx（nginx相关）
+  * [nginx安装](nginx/nginx安装.md)
   * [nginx配置详情](nginx/nginx配置详情.md)
   * [反向代理配置](nginx/反向代理配置.md)
   * [nginx配置清单](nginx/nginx配置清单.md)
   * [nginx拿到真实域名和ip](nginx/nginx拿到真实域名和ip.md)
   * [nginx请求超时问题](nginx/nginx请求超时问题.md)
-  * [root和alias的区别](nginx/root和alias的区别.md)
-
+* [root和alias的区别](nginx/root和alias的区别.md)
+  
 * 🍑idea使用问题（idea相关）
   * [idea快捷键](idea/idea快捷键.md)
   * [idea没有servise窗口解决办法](idea/idea没有servise窗口解决办法.md)
