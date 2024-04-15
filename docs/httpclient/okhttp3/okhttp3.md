@@ -21,7 +21,7 @@ OkHttp GitHub地址：https://github.com/square/okhttp
 
 ## OkHttp3设计思路
 
-![这里写图片描述](https://img-blog.csdn.net/20170830113821628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveHgzMjY2NjQxNjI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![这里写图片描述](.\img\img1.png)
 
 Requests（请求）
 
@@ -174,7 +174,7 @@ String post(String url, String json) throws IOException {
 一次请求就是向目标服务器发送一串文本。什么样的文本？有下面结构的文本。
 HTTP请求包结构
 
-![这里写图片描述](https://img-blog.csdn.net/20170830130449528?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveHgzMjY2NjQxNjI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![img2](.\img\img2.jpg)
 
 例子：
 
