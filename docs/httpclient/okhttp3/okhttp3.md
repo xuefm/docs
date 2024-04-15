@@ -172,7 +172,7 @@ String post(String url, String json) throws IOException {
 `MediaType`用于描述Http请求和响应体的内容类型，也就是`Content-Type`。
 
 一次请求就是向目标服务器发送一串文本。什么样的文本？有下面结构的文本。
-HTTP请求包结构（图片来自[Android网络请求心路历程](http://www.jianshu.com/p/3141d4e46240)）
+HTTP请求包结构
 
 ![这里写图片描述](https://img-blog.csdn.net/20170830130449528?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveHgzMjY2NjQxNjI=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
@@ -335,7 +335,7 @@ private static final String IMGUR_CLIENT_ID = "...";
 
 ## 2.5、HTTP头部的设置和读取
 
-HTTP 头的数据结构是 `Map<String, List<String>>`类型。也就是说，对于每个 HTTP 头，可能有多个值。但是大部分 HTTP 头都只有一个值，只有少部分 HTTP 头允许多个值。至于name的取值说明，可以查看这个[请求头大全](http://tools.jb51.net/table/http_header)。
+HTTP 头的数据结构是 `Map<String, List<String>>`类型。也就是说，对于每个 HTTP 头，可能有多个值。但是大部分 HTTP 头都只有一个值，只有少部分 HTTP 头允许多个值。
 
 OkHttp的处理方式是：
 
