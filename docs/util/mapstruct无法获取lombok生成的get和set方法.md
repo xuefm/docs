@@ -112,13 +112,9 @@ public class AccountMapperImpl implements AccountMapper {
 
 ### 2.问题解决过程和分析
 
-经过尝试发现当不适用lombok的@Data注解而是使用手写get和set方法时候可以正常生成accountVO.setId(account.getId());等代码
+经过尝试发现当不使用lombok的@Data注解而是使用手写get和set方法时候可以正常生成accountVO.setId(account.getId());等代码。
 
-lombok和都是mapstruct在编译时通过注解生成.class文件
-
-猜测是否是mapstruct在生成impl时lombok还未生成get和set方法，
-
-那为什么/src/test/java/下的有accountVO.setId(account.getId());等代码，应该是此时lombok已经处理完了此时已经可以获取到get和set方法了
+lombok和mapstruct都是在编译时通过注解生成.class文件，猜测是否是mapstruct在生成impl时lombok还未生成get和set方法。
 
 那有没有办法指定代码的编译顺序呢，
 
