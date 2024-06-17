@@ -131,5 +131,14 @@ sudo systemctl restart docker
 
 
 
+# 四、docker-compose
 
+```bash
+yum install docker-compose-plugin -y　
+```
 
+查看版本
+
+```bash
+docker compose version
+```
