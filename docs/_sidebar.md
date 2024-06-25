@@ -21,7 +21,6 @@
     * [docker安装](docker/安装docker.md)
   * docker使用
     * [docker容器开机自动启动](docker/docker容器开机自动启动.md)
-    * [docker](docker/docker(狂神).md)
     * [docker命令](docker/docker命令.md)
     * [run命令](docker/run命令.md)
     * [dockerfle](docker/dockerfile.md)
