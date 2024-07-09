@@ -77,5 +77,7 @@ make install
 /usr/local/nginx/sbin/nginx
 #停止nginx
 /usr/local/nginx/sbin/nginx -s stop
+#重启nginx
+/usr/local/nginx/sbin/nginx -s reload
 ```
 
