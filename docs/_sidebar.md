@@ -52,6 +52,7 @@
   * [nginx配置清单](nginx/nginx配置清单.md)
   * [nginx拿到真实域名和ip](nginx/nginx拿到真实域名和ip.md)
   * [nginx请求超时问题](nginx/nginx请求超时问题.md)
+  * [nginx只允许域名访问禁止ip访问](nginx/nginx只允许域名访问禁止ip访问.md)
   
 * [root和alias的区别](nginx/root和alias的区别.md)
   
